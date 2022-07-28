@@ -4,10 +4,10 @@ import { useQuery } from '@apollo/client';
 
 import TodoItem from './TodoItem';
 import TotalCount from './TotalCount';
-import { GET_TODOS } from '../apollo/todos';
+import { ALL_TODO } from '../apollo/todos';
 
 const TodoList = () => {
-  const {data, loading, error} = useQuery(GET_TODOS);
+  const {data, loading, error} = useQuery(ALL_TODO);
 
   if (loading) {
     return <Spinner />
