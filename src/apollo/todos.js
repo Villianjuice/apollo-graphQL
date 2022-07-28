@@ -17,3 +17,20 @@ mutation createTodo($title: String!, $user_id: ID!, $completed: Boolean! ) {
     completed
   }
 }`
+
+export const TOGGLE_TODO = gql`
+mutation toggleComplete ($id: ID!, $completed: Boolean) {
+  updateTodo (id: $id, completed: $completed) {
+    id
+    title
+    completed
+  }
+}`
+
+export const DELETE_TODO = gql`
+  mutation DeleteTodo($id:ID!) {
+    removeTodo(id:$id) {
+      id
+    }
+  }
+`;
